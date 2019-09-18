@@ -15,6 +15,8 @@
 		5438952E2330CDFB00EDAB67 /* CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5438952D2330CDFB00EDAB67 /* CenterTests.swift */; };
 		54D79E832330D849002CAD1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D79E822330D849002CAD1C /* Alamofire.framework */; };
 		54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E862330D92C002CAD1C /* NetworkManager.swift */; };
+		54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8923320C86002CAD1C /* NetworkConfig.swift */; };
+		54D79E8C2332280F002CAD1C /* NetworkErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		5438952F2330CDFB00EDAB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D79E822330D849002CAD1C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		54D79E862330D92C002CAD1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		54D79E8923320C86002CAD1C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +118,19 @@
 		54D79E852330D8FA002CAD1C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				54D79E862330D92C002CAD1C /* NetworkManager.swift */,
+				54D79E8823320C68002CAD1C /* Network */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		54D79E8823320C68002CAD1C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54D79E862330D92C002CAD1C /* NetworkManager.swift */,
+				54D79E8923320C86002CAD1C /* NetworkConfig.swift */,
+				54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */,
+				54D79E8C2332280F002CAD1C /* NetworkErrorCode.swift in Sources */,
 				5438951B2330CDF800EDAB67 /* ViewController.swift in Sources */,
+				54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */,
 				543895192330CDF800EDAB67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

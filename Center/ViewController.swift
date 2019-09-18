@@ -14,24 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager = NetworkManagerImpl.shared as NetworkManager
-        getAllWeekPlanList()
+        createWeekPlan()
     }
     
-    private func testNetworkManager() {
-        networkManager?.get(url: "/tech/health", complete: { (success, data) in
-            var result: String = ""
-            if success {
-                if data == nil {
-                    result = "success but data is nil"
-                } else {
-                    result = "success and " + (String.init(data: data!, encoding: String.Encoding.utf8) ?? "data can't convert to string")
-                }
-            } else {
-                result = "falure"
-            }
-            print(result)
-        })
-    }
+    
     
     private class Weekplan: NSObject, Codable {
         var id: String?
@@ -49,20 +35,38 @@ class ViewController: UIViewController {
         }
     }
     
-    private func getAllWeekPlanList() {
-        networkManager?.get(url: "/weekplan/b0072742-5eb0-4d60-b6f3-083dd82ebb63", complete: { (success, data) in
-            if success && data != nil {
-                do {
-                    let weekplan = try JSONDecoder().decode([Weekplan].self, from: data!)
-                    print(weekplan)
-                } catch let error as NSError {
-                    let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: [])
-                    print(error.localizedDescription + " json data is: " + jsonObject.debugDescription)
-                }
-            } else {
-                print("falure")
+    private func createWeekPlan() {
+        let weekplan = Weekplan()
+        weekplan.id = "123"
+        weekplan.weekNum = 38
+        weekplan.content = "123"
+        weekplan.award = "123"
+        weekplan.punishment = "123"
+        
+        let data = try? JSONEncoder().encode(weekplan)
+        if data != nil {
+            var dic = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init()) as? [String: Any]
+            if dic != nil {
+               networkManager?.post(url: "/weekplan/create", parameters: dic, complete: { (errorCode, data) in
+                    if errorCode == nil {
+                        let id = String.init(data: data!, encoding: String.Encoding.utf8)
+                        print("id is \(id ?? "123")")
+                    } else {
+                        switch errorCode! {
+                        case .internalServerError:
+                            print("server error")
+                        case .notFoundError:
+                            print("not found")
+                        default:
+                            print("falure")
+                        }
+                    }
+                })
             }
-        })
+        } else {
+            print("data is null")
+        }
+
     }
 
 }
