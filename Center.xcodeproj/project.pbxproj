@@ -18,6 +18,7 @@
 		54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8923320C86002CAD1C /* NetworkConfig.swift */; };
 		54D79E8C2332280F002CAD1C /* NetworkErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */; };
 		54D79E8F233355AF002CAD1C /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8E233355AF002CAD1C /* Json.swift */; };
+		54D79E9123336F57002CAD1C /* JsonConvertorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E9023336F57002CAD1C /* JsonConvertorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		54D79E8923320C86002CAD1C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorCode.swift; sourceTree = "<group>"; };
 		54D79E8E233355AF002CAD1C /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		54D79E9023336F57002CAD1C /* JsonConvertorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvertorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				5438952D2330CDFB00EDAB67 /* CenterTests.swift */,
+				54D79E9023336F57002CAD1C /* JsonConvertorTests.swift */,
 				5438952F2330CDFB00EDAB67 /* Info.plist */,
 			);
 			path = CenterTests;
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D79E9123336F57002CAD1C /* JsonConvertorTests.swift in Sources */,
 				5438952E2330CDFB00EDAB67 /* CenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,6 +36,9 @@ private extension JsonConvertor {
     
     func toObject<T: Codable>(_ data: Data?) -> T? {
         guard let data = data else { return nil }
+        if T.self == String.self {
+            return String.init(data: data, encoding: String.Encoding.utf8) as? T
+        }
         return try? JSONDecoder().decode(T.self, from: data)
     }
     
@@ -48,9 +51,6 @@ class JSONConvertor: JsonConvertor {
     }
     
     static func dataToObject<T: Codable>(data: Data?) -> T? {
-        if T.self == String.self {
-            return String.init(data: data!, encoding: String.Encoding.utf8) as? T
-        }
-        return try? JSONDecoder().decode(T.self, from: data!)
+        return JSONConvertor().toObject(data)
     }
 }
