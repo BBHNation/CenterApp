@@ -17,6 +17,7 @@
 		54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E862330D92C002CAD1C /* NetworkManager.swift */; };
 		54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8923320C86002CAD1C /* NetworkConfig.swift */; };
 		54D79E8C2332280F002CAD1C /* NetworkErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */; };
+		54D79E8F233355AF002CAD1C /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8E233355AF002CAD1C /* Json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		54D79E862330D92C002CAD1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54D79E8923320C86002CAD1C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorCode.swift; sourceTree = "<group>"; };
+		54D79E8E233355AF002CAD1C /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		54D79E852330D8FA002CAD1C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				54D79E8D23335573002CAD1C /* Codable */,
 				54D79E8823320C68002CAD1C /* Network */,
 			);
 			path = Infrastructure;
@@ -131,6 +134,14 @@
 				54D79E8B2332280F002CAD1C /* NetworkErrorCode.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		54D79E8D23335573002CAD1C /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				54D79E8E233355AF002CAD1C /* Json.swift */,
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */,
 				54D79E8C2332280F002CAD1C /* NetworkErrorCode.swift in Sources */,
 				5438951B2330CDF800EDAB67 /* ViewController.swift in Sources */,
+				54D79E8F233355AF002CAD1C /* Json.swift in Sources */,
 				54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */,
 				543895192330CDF800EDAB67 /* AppDelegate.swift in Sources */,
 			);

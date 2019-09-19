@@ -14,9 +14,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager = NetworkManagerImpl.shared
-        createWeekPlan()
+        getAllWeekPlan()
     }
     
+    private func getAllWeekPlan() {
+        networkManager?.get(url: "/weekplan/all", complete: { (err, data) in
+            if err == nil && data != nil {
+                let arr: [Weekplan]? = JSONConvertor.dataToObject(data: data!)
+                print(arr ?? "null")
+            } else {
+                print("falure")
+            }
+        })
+    }
     
     
     private class Weekplan: NSObject, Codable {
@@ -38,18 +48,19 @@ class ViewController: UIViewController {
     private func createWeekPlan() {
         let weekplan = Weekplan()
         weekplan.id = "123"
-        weekplan.weekNum = 38
+        weekplan.weekNum = 40
         weekplan.content = "123"
         weekplan.award = "123"
         weekplan.punishment = "123"
         
         let data = try? JSONEncoder().encode(weekplan)
         if data != nil {
-            var dic = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init()) as? [String: Any]
+//            let dic = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init()) as? [String: Any]
+            let dic = JSONConvertor.objectToDic(object: weekplan)
             if dic != nil {
                networkManager?.post(url: "/weekplan/create", parameters: dic, complete: { (errorCode, data) in
                     if errorCode == nil {
-                        let id = String.init(data: data!, encoding: String.Encoding.utf8)
+                        let id: String? = JSONConvertor.dataToObject(data: data!)
                         print("id is \(id ?? "123")")
                     } else {
                         switch errorCode! {
