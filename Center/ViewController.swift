@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager = NetworkManagerImpl.shared as NetworkManager
+        networkManager = NetworkManagerImpl.shared
         createWeekPlan()
     }
     

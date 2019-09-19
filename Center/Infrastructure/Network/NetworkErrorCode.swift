@@ -12,10 +12,23 @@ enum NetworkErrorCode {
     case internalServerError
     case notFoundError
     case duplicateError
-    init(statusCode: String) {
-        self = .internalServerError
-        if statusCode == "404" {
+    
+    init?(statusCode: String?) {
+        if statusCode?.hasPrefix("2") ?? false {
+            return nil
+        } else if statusCode == "404" {
             self = .notFoundError
+        } else {
+            self = .internalServerError
+        }
+    }
+    
+    init?(statusCode: Int?) {
+        let code = NetworkErrorCode.init(statusCode: "\(statusCode ?? 500)")
+        if code == nil {
+            return nil
+        } else {
+            self = code!
         }
     }
 }
