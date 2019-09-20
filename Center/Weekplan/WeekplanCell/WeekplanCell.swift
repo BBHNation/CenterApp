@@ -9,6 +9,8 @@
 import UIKit
 
 class WeekplanCell: UITableViewCell {
+    @IBOutlet weak var shadowView: UIView!
+    
     private var model: WeekplanModel? {
         didSet {
             refreshLayout()
@@ -17,6 +19,7 @@ class WeekplanCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        initLayout()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,6 +32,14 @@ class WeekplanCell: UITableViewCell {
     
     func refreshLayout() {
         
+    }
+    
+    func initLayout() {
+        shadowView.layer.shadowOpacity = 1.0
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        shadowView.layer.shadowRadius = 4.0
+        shadowView.layer.cornerRadius = 5
     }
 
 }
