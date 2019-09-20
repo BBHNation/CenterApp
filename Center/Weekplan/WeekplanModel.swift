@@ -45,7 +45,7 @@ class WeekSummaryModel: NSObject, Codable {
     
     var score: Int?
     
-    var result: String?
+    var result: Result?
     
     override var description: String {
         let desc = """
@@ -54,9 +54,15 @@ class WeekSummaryModel: NSObject, Codable {
             planId: \(planId ?? "nil"),
             content: \(content ?? "nil"),
             score: \(score ?? 0)
-            result: \(result ?? "nil")
+            result: \(result.debugDescription)
         】
         """
         return desc
+    }
+    
+    enum Result: String, Codable {
+        case getAward = "GET_AWARD"
+        case getPunishment = "GET_PUNISHMENT"
+        case nothingTodo = "NOTHING_TODO"
     }
 }
