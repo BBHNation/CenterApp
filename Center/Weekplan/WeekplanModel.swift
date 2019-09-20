@@ -19,6 +19,8 @@ class WeekplanModel: NSObject, Codable {
     
     var punishment: String?
     
+    var summary: WeekSummaryModel?
+    
     override var description: String {
         let desc = """
         \n{
@@ -27,7 +29,33 @@ class WeekplanModel: NSObject, Codable {
         content: \(content ?? "nil"),
         award: \(award ?? "nil"),
         punishment: \(punishment ?? "nil")
+        summary: \(summary?.description ?? "nil")
         }
+        """
+        return desc
+    }
+}
+
+class WeekSummaryModel: NSObject, Codable {
+    var id: String?
+    
+    var planId: String?
+    
+    var content: String?
+    
+    var score: Int?
+    
+    var result: String?
+    
+    override var description: String {
+        let desc = """
+        【
+            id: \(id ?? "nil"),
+            planId: \(planId ?? "nil"),
+            content: \(content ?? "nil"),
+            score: \(score ?? 0)
+            result: \(result ?? "nil")
+        】
         """
         return desc
     }

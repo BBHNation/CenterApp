@@ -24,6 +24,7 @@
 		54D79E982333A332002CAD1C /* WeekplanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E972333A332002CAD1C /* WeekplanListViewModel.swift */; };
 		54D79E9A2333A35F002CAD1C /* WeekplanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E992333A35F002CAD1C /* WeekplanModel.swift */; };
 		54D79E9D2333AF10002CAD1C /* WeekplanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E9C2333AF10002CAD1C /* WeekplanCell.swift */; };
+		54D79E9F2334650B002CAD1C /* Weekplan.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D79E9E2334650B002CAD1C /* Weekplan.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		54D79E972333A332002CAD1C /* WeekplanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanListViewModel.swift; sourceTree = "<group>"; };
 		54D79E992333A35F002CAD1C /* WeekplanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanModel.swift; sourceTree = "<group>"; };
 		54D79E9C2333AF10002CAD1C /* WeekplanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanCell.swift; sourceTree = "<group>"; };
+		54D79E9E2334650B002CAD1C /* Weekplan.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weekplan.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				54D79E972333A332002CAD1C /* WeekplanListViewModel.swift */,
 				54D79E992333A35F002CAD1C /* WeekplanModel.swift */,
 				54D79E952333A0BB002CAD1C /* Weekplan.storyboard */,
+				54D79E9E2334650B002CAD1C /* Weekplan.xcassets */,
 			);
 			path = Weekplan;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				543895232330CDFB00EDAB67 /* LaunchScreen.storyboard in Resources */,
+				54D79E9F2334650B002CAD1C /* Weekplan.xcassets in Resources */,
 				54D79E962333A0BB002CAD1C /* Weekplan.storyboard in Resources */,
 				543895202330CDFB00EDAB67 /* Assets.xcassets in Resources */,
 				5438951E2330CDF800EDAB67 /* Main.storyboard in Resources */,

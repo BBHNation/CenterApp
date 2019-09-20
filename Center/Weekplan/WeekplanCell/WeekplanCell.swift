@@ -10,6 +10,9 @@ import UIKit
 
 class WeekplanCell: UITableViewCell {
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var weekNumLabel: UILabel!
+    @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     private var model: WeekplanModel? {
         didSet {
@@ -31,7 +34,7 @@ class WeekplanCell: UITableViewCell {
     }
     
     func refreshLayout() {
-        
+        weekNumLabel.text = "第\(model?.weekNum ?? 0)周"
     }
     
     func initLayout() {

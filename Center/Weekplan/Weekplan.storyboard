@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--周数-->
+        <!--二零一九年-->
         <scene sceneID="6GH-0m-3pH">
             <objects>
                 <tableViewController id="J2a-OM-Pj6" customClass="WeekplanListVC" customModule="Center" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,54 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27h-RU-gc9">
                                             <rect key="frame" x="22" y="4" width="370" height="120"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vp7-Tb-8iS">
+                                                    <rect key="frame" x="16" y="9" width="43" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="BmW-tS-UXJ">
+                                                    <rect key="frame" x="16" y="59" width="34" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="BmW-tS-UXJ" secondAttribute="height" multiplier="1:1" id="BWo-yk-94e"/>
+                                                        <constraint firstAttribute="width" constant="34" id="H0m-Up-C2m"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPk-pa-aoR">
+                                                    <rect key="frame" x="66" y="64" width="276" height="24"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XS8-gD-XdU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="24"/>
+                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="XS8-gD-XdU" firstAttribute="top" secondItem="RPk-pa-aoR" secondAttribute="top" id="ChV-65-DYf"/>
+                                                        <constraint firstAttribute="height" constant="24" id="J7p-DX-orX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XS8-gD-XdU" secondAttribute="trailing" id="PT9-xN-Pxf"/>
+                                                        <constraint firstItem="XS8-gD-XdU" firstAttribute="leading" secondItem="RPk-pa-aoR" secondAttribute="leading" id="ydO-Bp-KK7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XS8-gD-XdU" secondAttribute="bottom" id="z0e-9y-BXD"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="vp7-Tb-8iS" firstAttribute="top" secondItem="27h-RU-gc9" secondAttribute="top" constant="9" id="2XI-ox-R8Q"/>
+                                                <constraint firstItem="vp7-Tb-8iS" firstAttribute="leading" secondItem="27h-RU-gc9" secondAttribute="leading" constant="16" id="4Ww-Bb-Fzw"/>
+                                                <constraint firstItem="RPk-pa-aoR" firstAttribute="leading" secondItem="BmW-tS-UXJ" secondAttribute="trailing" constant="16" id="4YO-Xn-k7Z"/>
+                                                <constraint firstItem="BmW-tS-UXJ" firstAttribute="top" secondItem="vp7-Tb-8iS" secondAttribute="bottom" constant="24" id="6Zv-Vo-HVh"/>
+                                                <constraint firstAttribute="trailing" secondItem="RPk-pa-aoR" secondAttribute="trailing" constant="28" id="6wV-7A-JdB"/>
+                                                <constraint firstItem="BmW-tS-UXJ" firstAttribute="leading" secondItem="vp7-Tb-8iS" secondAttribute="leading" id="SHf-bj-HFV"/>
+                                                <constraint firstItem="RPk-pa-aoR" firstAttribute="centerY" secondItem="BmW-tS-UXJ" secondAttribute="centerY" id="lZg-kl-lHw"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +97,10 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="progressView" destination="XS8-gD-XdU" id="IMC-jg-q5i"/>
                                     <outlet property="shadowView" destination="27h-RU-gc9" id="PdT-2q-Di2"/>
+                                    <outlet property="trailingConstraint" destination="PT9-xN-Pxf" id="q4i-Wq-bON"/>
+                                    <outlet property="weekNumLabel" destination="vp7-Tb-8iS" id="B6i-h4-0qM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,7 +109,7 @@
                             <outlet property="delegate" destination="J2a-OM-Pj6" id="qh6-8c-GXs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="周数" id="YEE-ji-HlE"/>
+                    <navigationItem key="navigationItem" title="二零一九年" id="YEE-ji-HlE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzm-dI-fwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,4 +132,7 @@
             <point key="canvasLocation" x="-1545" y="127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gift" width="100" height="100"/>
+    </resources>
 </document>

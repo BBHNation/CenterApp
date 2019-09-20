@@ -36,7 +36,7 @@ class WeekplanListVC: UITableViewController {
 
 extension WeekplanListVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel?.weekplanList.count ?? 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +44,11 @@ extension WeekplanListVC {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "weekplan", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weekplan", for: indexPath) as! WeekplanCell
+        if let model = viewModel?.weekplanList[indexPath.row] {
+            cell.setModel(model)
+        }
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,6 +61,7 @@ extension WeekplanListVC: WeekplanListViewControllerDelegate {
     func refreshList() {
         print("refresh: ")
         print(viewModel?.weekplanList ?? "list is null")
+        tableView.reloadData()
     }
     
     func errorNotice(_ message: String) {

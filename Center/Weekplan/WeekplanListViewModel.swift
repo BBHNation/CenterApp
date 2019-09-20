@@ -17,6 +17,7 @@ class WeekplanListViewModel {
     
     private var delegate: WeekplanListViewControllerDelegate
     private var networkManager: NetworkManager
+    private let dispatchGroup = DispatchGroup()
     
     init(delegate: WeekplanListViewControllerDelegate) {
         self.delegate = delegate
@@ -40,7 +41,26 @@ class WeekplanListViewModel {
                 self.delegate.errorNotice("啊哦，服务器数据为空！")
                 return
             }
-            self.handleResponseData(data)
+            self.handleWeekplanListResponseData(data)
+        }
+    }
+    
+    func fetchWeekSummaryWithWeekplan(weekplan: WeekplanModel) {
+        dispatchGroup.enter()
+        networkManager.get(url: "/weeksummary/plan/\(weekplan.id ?? "")") { [weak self] (errCode, data) in
+            guard let `self` = self else { return }
+            if errCode != nil {
+                self.handleErrorCode(errCode!)
+                self.dispatchGroup.leave()
+                return
+            }
+            guard let data = data else {
+                self.delegate.errorNotice("查询周总结失败！")
+                self.dispatchGroup.leave()
+                return
+            }
+            self.handleWeekSummaryResponseData(weekplan, data)
+            self.dispatchGroup.leave()
         }
     }
     
@@ -55,12 +75,25 @@ class WeekplanListViewModel {
         }
     }
     
-    private func handleResponseData(_ data: Data) {
+    private func handleWeekSummaryResponseData(_ weekplan: WeekplanModel, _ data: Data) {
+        guard let summaryModel: WeekSummaryModel = JSONConvertor.dataToObject(data: data) else {
+            self.delegate.errorNotice("啊哦，数据格式有误，无法转换！")
+            return
+        }
+        weekplan.summary = summaryModel
+    }
+    
+    private func handleWeekplanListResponseData(_ data: Data) {
         guard let list: [WeekplanModel] = JSONConvertor.dataToObject(data: data) else {
             self.delegate.errorNotice("啊哦，数据格式有误，无法转换！")
             return
         }
-        self.weekplanList = list
+        for weekplan in list {
+            fetchWeekSummaryWithWeekplan(weekplan: weekplan)
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            self.weekplanList = list
+        }
     }
     
 }
