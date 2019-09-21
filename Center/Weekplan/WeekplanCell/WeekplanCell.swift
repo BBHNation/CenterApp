@@ -39,7 +39,7 @@ class WeekplanCell: UITableViewCell {
         
         if let summary = model?.summary {
             UIView.animate(withDuration: 0.3) {
-                self.widthConstraint.setMultiplier(multiplier: CGFloat(summary.score ?? 0) / 10)
+                self.widthConstraint = self.widthConstraint.setMultiplier(multiplier: CGFloat(summary.score ?? 0) / 10)
             }
             switch summary.result {
             case .none:
@@ -53,7 +53,7 @@ class WeekplanCell: UITableViewCell {
             }
         } else {
             statusImage.image = #imageLiteral(resourceName: "nothingTodo")
-            widthConstraint.setMultiplier(multiplier: 0)
+            widthConstraint = widthConstraint.setMultiplier(multiplier: 0)
         }
     }
     

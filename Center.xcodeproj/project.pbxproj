@@ -14,6 +14,8 @@
 		543895232330CDFB00EDAB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543895212330CDFB00EDAB67 /* LaunchScreen.storyboard */; };
 		5438952E2330CDFB00EDAB67 /* CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5438952D2330CDFB00EDAB67 /* CenterTests.swift */; };
 		54C379A82335E0770038FC72 /* NSConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C379A72335E0770038FC72 /* NSConstraintExtension.swift */; };
+		54C379AA2335FC370038FC72 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C379A92335FC370038FC72 /* MJRefresh.framework */; };
+		54C379AC2336015C0038FC72 /* WeekplanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C379AB2336015C0038FC72 /* WeekplanCell.xib */; };
 		54D79E832330D849002CAD1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D79E822330D849002CAD1C /* Alamofire.framework */; };
 		54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E862330D92C002CAD1C /* NetworkManager.swift */; };
 		54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8923320C86002CAD1C /* NetworkConfig.swift */; };
@@ -50,6 +52,8 @@
 		5438952D2330CDFB00EDAB67 /* CenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTests.swift; sourceTree = "<group>"; };
 		5438952F2330CDFB00EDAB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C379A72335E0770038FC72 /* NSConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSConstraintExtension.swift; sourceTree = "<group>"; };
+		54C379A92335FC370038FC72 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = "<group>"; };
+		54C379AB2336015C0038FC72 /* WeekplanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekplanCell.xib; sourceTree = "<group>"; };
 		54D79E822330D849002CAD1C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		54D79E862330D92C002CAD1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54D79E8923320C86002CAD1C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C379AA2335FC370038FC72 /* MJRefresh.framework in Frameworks */,
 				54D79E832330D849002CAD1C /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +143,7 @@
 		54D79E812330D849002CAD1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				54C379A92335FC370038FC72 /* MJRefresh.framework */,
 				54D79E822330D849002CAD1C /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -188,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				54D79E9C2333AF10002CAD1C /* WeekplanCell.swift */,
+				54C379AB2336015C0038FC72 /* WeekplanCell.xib */,
 			);
 			path = WeekplanCell;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 				54D79E9F2334650B002CAD1C /* Weekplan.xcassets in Resources */,
 				54D79E962333A0BB002CAD1C /* Weekplan.storyboard in Resources */,
 				543895202330CDFB00EDAB67 /* Assets.xcassets in Resources */,
+				54C379AC2336015C0038FC72 /* WeekplanCell.xib in Resources */,
 				5438951E2330CDF800EDAB67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +309,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework",
 			);
 			outputFileListPaths = (
 			);

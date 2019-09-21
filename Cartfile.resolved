@@ -1,1 +1,2 @@
 github "Alamofire/Alamofire" "5.0.0-rc.2"
+github "CoderMJLee/MJRefresh" "3.2.1"

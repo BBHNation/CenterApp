@@ -7,43 +7,39 @@
 //
 
 import UIKit
+import MJRefresh
 
-class WeekplanListVC: UITableViewController {
+class WeekplanListVC: UIViewController {
     private var viewModel: WeekplanListViewModel?
+    @IBOutlet weak var tableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: "WeekplanCell", bundle: Bundle.main), forCellReuseIdentifier: "weekplan")
         viewModel = WeekplanListViewModel(delegate: self)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.refreshTable()
-        }
+        tableView.refreshControl = UIRefreshControl.init()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
     
-    func refreshTable() {
+    @objc func refreshTable() {
         viewModel?.fetchWeekplanList()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 }
 
-extension WeekplanListVC {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension WeekplanListVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.weekplanList.count ?? 0
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weekplan", for: indexPath) as! WeekplanCell
         if let model = viewModel?.weekplanList[indexPath.row] {
             cell.setModel(model)
@@ -51,7 +47,7 @@ extension WeekplanListVC {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144.0
     }
 }
@@ -59,9 +55,8 @@ extension WeekplanListVC {
 extension WeekplanListVC: WeekplanListViewControllerDelegate {
     
     func refreshList() {
-        print("refresh: ")
-        print(viewModel?.weekplanList ?? "list is null")
         tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
     
     func errorNotice(_ message: String) {
