@@ -20,7 +20,7 @@
                                 <rect key="frame" x="184" y="433" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="cUS-Cz-Jxa" kind="show" id="YjH-8w-G7k"/>
+                                    <segue destination="cUS-Cz-Jxa" kind="presentation" modalPresentationStyle="fullScreen" id="YjH-8w-G7k"/>
                                 </connections>
                             </button>
                         </subviews>

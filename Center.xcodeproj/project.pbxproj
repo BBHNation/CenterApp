@@ -28,6 +28,7 @@
 		54D79E9A2333A35F002CAD1C /* WeekplanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E992333A35F002CAD1C /* WeekplanModel.swift */; };
 		54D79E9D2333AF10002CAD1C /* WeekplanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E9C2333AF10002CAD1C /* WeekplanCell.swift */; };
 		54D79E9F2334650B002CAD1C /* Weekplan.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D79E9E2334650B002CAD1C /* Weekplan.xcassets */; };
+		54EE233823364B6400F818F6 /* WeekplanNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EE233723364B6400F818F6 /* WeekplanNavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		54D79E992333A35F002CAD1C /* WeekplanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanModel.swift; sourceTree = "<group>"; };
 		54D79E9C2333AF10002CAD1C /* WeekplanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanCell.swift; sourceTree = "<group>"; };
 		54D79E9E2334650B002CAD1C /* Weekplan.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weekplan.xcassets; sourceTree = "<group>"; };
+		54EE233723364B6400F818F6 /* WeekplanNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekplanNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				54D79E9B2333AEDF002CAD1C /* WeekplanCell */,
 				54D79E932333A0AB002CAD1C /* WeekplanListVC.swift */,
+				54EE233723364B6400F818F6 /* WeekplanNavController.swift */,
 				54D79E972333A332002CAD1C /* WeekplanListViewModel.swift */,
 				54D79E992333A35F002CAD1C /* WeekplanModel.swift */,
 				54D79E952333A0BB002CAD1C /* Weekplan.storyboard */,
@@ -209,7 +212,7 @@
 				543895112330CDF800EDAB67 /* Sources */,
 				543895122330CDF800EDAB67 /* Frameworks */,
 				543895132330CDF800EDAB67 /* Resources */,
-				54D79E842330D887002CAD1C /* ShellScript */,
+				54D79E842330D887002CAD1C /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -300,7 +303,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		54D79E842330D887002CAD1C /* ShellScript */ = {
+		54D79E842330D887002CAD1C /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,6 +314,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework",
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -332,6 +336,7 @@
 				5438951B2330CDF800EDAB67 /* ViewController.swift in Sources */,
 				54D79E8F233355AF002CAD1C /* Json.swift in Sources */,
 				54D79E982333A332002CAD1C /* WeekplanListViewModel.swift in Sources */,
+				54EE233823364B6400F818F6 /* WeekplanNavController.swift in Sources */,
 				54D79E9A2333A35F002CAD1C /* WeekplanModel.swift in Sources */,
 				54C379A82335E0770038FC72 /* NSConstraintExtension.swift in Sources */,
 				54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */,
@@ -506,6 +511,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Center/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,6 +534,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Center/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

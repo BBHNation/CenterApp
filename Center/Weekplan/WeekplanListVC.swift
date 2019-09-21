@@ -27,6 +27,10 @@ class WeekplanListVC: UIViewController {
     @objc func refreshTable() {
         viewModel?.fetchWeekplanList()
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }
 
@@ -49,6 +53,10 @@ extension WeekplanListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect(x: 0,y: 0,width: 0,height: 22))
     }
 }
 

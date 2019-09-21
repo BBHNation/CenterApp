@@ -38,9 +38,19 @@ class WeekplanCell: UITableViewCell {
         weekNumLabel.text = "第\(model?.weekNum ?? 0)周"
         
         if let summary = model?.summary {
-            UIView.animate(withDuration: 0.3) {
-                self.widthConstraint = self.widthConstraint.setMultiplier(multiplier: CGFloat(summary.score ?? 0) / 10)
+            let scorePercent = CGFloat(summary.score ?? 0) / 10
+            widthConstraint = widthConstraint.setMultiplier(multiplier: scorePercent)
+            switch scorePercent {
+            case (0...0.6):
+                progressView.backgroundColor = UIColor.init(named: "Bad")
+            case (0.6..<1):
+                progressView.backgroundColor = UIColor.init(named: "Warning")
+            case (1):
+                progressView.backgroundColor = UIColor.init(named: "Main")
+            default:
+                progressView.backgroundColor = UIColor.init(named: "Main")
             }
+            
             switch summary.result {
             case .none:
                 statusImage.image = #imageLiteral(resourceName: "nothingTodo")
