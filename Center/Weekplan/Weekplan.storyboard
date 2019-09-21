@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
             <objects>
                 <tableViewController id="J2a-OM-Pj6" customClass="WeekplanListVC" customModule="Center" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yRR-ar-xI2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="w2a-3e-Dz8">
@@ -55,15 +56,15 @@
                                                     <rect key="frame" x="66" y="64" width="276" height="24"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XS8-gD-XdU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="24"/>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="221" height="24"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="XS8-gD-XdU" firstAttribute="width" secondItem="RPk-pa-aoR" secondAttribute="width" multiplier="0.8" id="2jT-uY-g2d"/>
                                                         <constraint firstItem="XS8-gD-XdU" firstAttribute="top" secondItem="RPk-pa-aoR" secondAttribute="top" id="ChV-65-DYf"/>
                                                         <constraint firstAttribute="height" constant="24" id="J7p-DX-orX"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XS8-gD-XdU" secondAttribute="trailing" id="PT9-xN-Pxf"/>
                                                         <constraint firstItem="XS8-gD-XdU" firstAttribute="leading" secondItem="RPk-pa-aoR" secondAttribute="leading" id="ydO-Bp-KK7"/>
                                                         <constraint firstAttribute="bottom" secondItem="XS8-gD-XdU" secondAttribute="bottom" id="z0e-9y-BXD"/>
                                                     </constraints>
@@ -74,15 +75,24 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail" translatesAutoresizingMaskIntoConstraints="NO" id="CGi-iy-LCv">
+                                                    <rect key="frame" x="324" y="16" width="18" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="CGi-iy-LCv" secondAttribute="height" multiplier="18:19" id="gh5-F8-6ew"/>
+                                                        <constraint firstAttribute="width" constant="18" id="jKU-xN-ccD"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="vp7-Tb-8iS" firstAttribute="top" secondItem="27h-RU-gc9" secondAttribute="top" constant="9" id="2XI-ox-R8Q"/>
                                                 <constraint firstItem="vp7-Tb-8iS" firstAttribute="leading" secondItem="27h-RU-gc9" secondAttribute="leading" constant="16" id="4Ww-Bb-Fzw"/>
                                                 <constraint firstItem="RPk-pa-aoR" firstAttribute="leading" secondItem="BmW-tS-UXJ" secondAttribute="trailing" constant="16" id="4YO-Xn-k7Z"/>
+                                                <constraint firstItem="CGi-iy-LCv" firstAttribute="bottom" secondItem="vp7-Tb-8iS" secondAttribute="bottom" id="4kV-qy-McK"/>
                                                 <constraint firstItem="BmW-tS-UXJ" firstAttribute="top" secondItem="vp7-Tb-8iS" secondAttribute="bottom" constant="24" id="6Zv-Vo-HVh"/>
                                                 <constraint firstAttribute="trailing" secondItem="RPk-pa-aoR" secondAttribute="trailing" constant="28" id="6wV-7A-JdB"/>
                                                 <constraint firstItem="BmW-tS-UXJ" firstAttribute="leading" secondItem="vp7-Tb-8iS" secondAttribute="leading" id="SHf-bj-HFV"/>
+                                                <constraint firstItem="CGi-iy-LCv" firstAttribute="trailing" secondItem="RPk-pa-aoR" secondAttribute="trailing" id="i5Q-yg-i9S"/>
                                                 <constraint firstItem="RPk-pa-aoR" firstAttribute="centerY" secondItem="BmW-tS-UXJ" secondAttribute="centerY" id="lZg-kl-lHw"/>
                                             </constraints>
                                         </view>
@@ -99,8 +109,9 @@
                                 <connections>
                                     <outlet property="progressView" destination="XS8-gD-XdU" id="IMC-jg-q5i"/>
                                     <outlet property="shadowView" destination="27h-RU-gc9" id="PdT-2q-Di2"/>
-                                    <outlet property="trailingConstraint" destination="PT9-xN-Pxf" id="q4i-Wq-bON"/>
+                                    <outlet property="statusImage" destination="BmW-tS-UXJ" id="E4m-VB-MfG"/>
                                     <outlet property="weekNumLabel" destination="vp7-Tb-8iS" id="B6i-h4-0qM"/>
+                                    <outlet property="widthConstraint" destination="2jT-uY-g2d" id="SYQ-P2-04i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +120,7 @@
                             <outlet property="delegate" destination="J2a-OM-Pj6" id="qh6-8c-GXs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="二零一九年" id="YEE-ji-HlE"/>
+                    <navigationItem key="navigationItem" title="二零一九年" largeTitleDisplayMode="always" id="YEE-ji-HlE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzm-dI-fwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,9 +130,10 @@
         <scene sceneID="o0D-01-oJj">
             <objects>
                 <navigationController id="0rf-Rt-blb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="PVR-dg-LLC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" shadowImage="shadow" largeTitles="YES" id="PVR-dg-LLC">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Main"/>
                     </navigationBar>
                     <connections>
                         <segue destination="J2a-OM-Pj6" kind="relationship" relationship="rootViewController" id="cKO-rf-Dco"/>
@@ -133,6 +145,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detail" width="56.5" height="100"/>
         <image name="gift" width="100" height="100"/>
+        <image name="shadow" width="437.5" height="23.5"/>
+        <namedColor name="Main">
+            <color red="0.15294117647058825" green="0.54117647058823526" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

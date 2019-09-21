@@ -13,6 +13,7 @@
 		543895202330CDFB00EDAB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5438951F2330CDFB00EDAB67 /* Assets.xcassets */; };
 		543895232330CDFB00EDAB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543895212330CDFB00EDAB67 /* LaunchScreen.storyboard */; };
 		5438952E2330CDFB00EDAB67 /* CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5438952D2330CDFB00EDAB67 /* CenterTests.swift */; };
+		54C379A82335E0770038FC72 /* NSConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C379A72335E0770038FC72 /* NSConstraintExtension.swift */; };
 		54D79E832330D849002CAD1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D79E822330D849002CAD1C /* Alamofire.framework */; };
 		54D79E872330D92C002CAD1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E862330D92C002CAD1C /* NetworkManager.swift */; };
 		54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D79E8923320C86002CAD1C /* NetworkConfig.swift */; };
@@ -48,6 +49,7 @@
 		543895292330CDFB00EDAB67 /* CenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5438952D2330CDFB00EDAB67 /* CenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTests.swift; sourceTree = "<group>"; };
 		5438952F2330CDFB00EDAB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C379A72335E0770038FC72 /* NSConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSConstraintExtension.swift; sourceTree = "<group>"; };
 		54D79E822330D849002CAD1C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		54D79E862330D92C002CAD1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54D79E8923320C86002CAD1C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = CenterTests;
 			sourceTree = "<group>";
 		};
+		54C379A62335E0570038FC72 /* UIKit-extension */ = {
+			isa = PBXGroup;
+			children = (
+				54C379A72335E0770038FC72 /* NSConstraintExtension.swift */,
+			);
+			path = "UIKit-extension";
+			sourceTree = "<group>";
+		};
 		54D79E812330D849002CAD1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		54D79E852330D8FA002CAD1C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				54C379A62335E0570038FC72 /* UIKit-extension */,
 				54D79E8D23335573002CAD1C /* Codable */,
 				54D79E8823320C68002CAD1C /* Network */,
 			);
@@ -313,6 +324,7 @@
 				54D79E8F233355AF002CAD1C /* Json.swift in Sources */,
 				54D79E982333A332002CAD1C /* WeekplanListViewModel.swift in Sources */,
 				54D79E9A2333A35F002CAD1C /* WeekplanModel.swift in Sources */,
+				54C379A82335E0770038FC72 /* NSConstraintExtension.swift in Sources */,
 				54D79E8A23320C86002CAD1C /* NetworkConfig.swift in Sources */,
 				54D79E9D2333AF10002CAD1C /* WeekplanCell.swift in Sources */,
 				543895192330CDF800EDAB67 /* AppDelegate.swift in Sources */,
